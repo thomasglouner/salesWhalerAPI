@@ -5,7 +5,13 @@ const {
 
 const server = http.createServer((req, res) => {
   if (req.url === '/api/products' && req.method === 'POST') {
-    createProduct(req, res);
+    //createProduct(req, res);
+    res.writeHead(404, { 'Content-Type': 'application/json' });
+    res.end(
+      JSON.stringify({
+        message: 'Route Found: Success',
+      })
+    );
   } else {
     res.writeHead(404, { 'Content-Type': 'application/json' });
     res.end(
