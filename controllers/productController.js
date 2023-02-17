@@ -6,7 +6,7 @@
 // @route   POST /api/products
 async function createProduct(req, res) {
     try {
-        const xmlDocument = new DOMParser().parseFromString(req, "text/xml")
+        /*const xmlDocument = new DOMParser().parseFromString(req, "text/xml")
 
         console.log(xmlDocument)
 
@@ -15,7 +15,7 @@ async function createProduct(req, res) {
 
         res.write(xmlResponse, 'utf8', () => {
             console.log("status: 200");
-        })
+        })*/
         
 
         //res.writeHead(201, {'Content-Type': 'application/xml'})
@@ -35,6 +35,8 @@ async function createProduct(req, res) {
         res.writeHead(201, { 'Content-Type': 'application/json' })
         return res.end(JSON.stringify(newProduct))  
         */
+        res.writeHead(201, { 'Content-Type': 'application/json' })
+        return res
     } catch (error) {
         console.log(error)
     }
